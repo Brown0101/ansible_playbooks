@@ -1,3 +1,7 @@
 ---
 [web]
 webserver01
+webserver02
+
+[db]
+dbserver01

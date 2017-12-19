@@ -1,6 +1,7 @@
 ---
 - hosts: web
-  vars_files:
-    - group_vars/vault.yml
+  #vars_files:
+  #  - group_vars/vault.yml
   roles:
     - webservers
+    - common
