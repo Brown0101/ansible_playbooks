@@ -1,0 +1,19 @@
+---
+  - name: Install tree
+    yum:
+      name: tree
+      state: present
+    when: ansible_os_family == "Centos"
+
+  - name: Install vim
+    yum:
+      name: vim
+      state: present
+    when: ansible_os_family == "Centos"
+
+  # Windows - Create directories for scripts
+  - name: Create directories
+    win_file:
+      path: C:\TempFolder\temp
+      state: directory
+    when: ansible_os_family == "Windows"

@@ -1,7 +1,8 @@
 ---
-- hosts: web
-  #vars_files:
-  #  - group_vars/vault.yml
+- hosts: win_web 
   roles:
     - webservers
     - common
+    - tools
+    - patching
+#   - domain_join

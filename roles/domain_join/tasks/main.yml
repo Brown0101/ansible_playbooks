@@ -1,0 +1,14 @@
+---
+  - name: Add Windows Server to the Domain
+    win_domain_membership:
+      dns_domain_name: ec2.internal 
+      hostname: windows-test
+      domain_admin_user: "{{ ansible_user }}"
+      domain_admin_password: "{{ ansible_password }}"
+      #domain_ou_path: "OU=Windows,OU=Servers,DC=ansible,DC=vagrant"
+      state: domain
+    register: server_state
+
+  - name: Reboot Server if Required
+    win_reboot:
+    when: server_state.reboot_required

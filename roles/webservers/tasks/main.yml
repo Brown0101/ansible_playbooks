@@ -3,8 +3,10 @@
     win_feature:
       name: Web-Server
       state: present
+    when: ansible_os_family == "Windows"
 
   - name: Deploy Default iisstart.htm file
     template:
       src: iisstart.j2
       dest: c:\inetpub\wwwroot\iisstart.htm
+    when: ansible_os_family == "Windows"

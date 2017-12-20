@@ -1,7 +1,18 @@
 ---
-[web]
+[lin_web]
 webserver01
 webserver02
 
-[db]
+[win_web]
+windows-test
+
+[lin_db]
 dbserver01
+
+[linux]
+webserver01
+webserver02
+dbserver01
+
+[windiows]
+windows-test
